@@ -30,7 +30,9 @@ const cleanUpData = (rawData: any) => {
 
 client
   .getEntries({ content_type: 'cars' })
-  .then((response) => console.log(cleanUpData(response.items)))
+  .then((response) => {
+    document.write(JSON.stringify(cleanUpData(response.items)));
+  })
   .catch(console.error);
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
